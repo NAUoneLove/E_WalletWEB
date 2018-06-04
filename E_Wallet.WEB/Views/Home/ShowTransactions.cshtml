@@ -1,0 +1,32 @@
+﻿
+@model IEnumerable<E_Wallet.WEB.Models.TransactionViewModel>
+@{
+    ViewBag.Title = "ShowTransactions";
+}
+
+<h2>Транзакції по рахунку</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=>model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountOfMoney)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfMoney)
+            </td>
+        </tr>
+    }
+
+</table>
+
